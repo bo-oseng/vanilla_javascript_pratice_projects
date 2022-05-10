@@ -2,3 +2,24 @@
 + 간단한 유효성 검사가 포함된 유저 등록 창입니다.
 + <a href='https://codepen.io/kim7720/pen/LYQNbRd' 
    target='_blank'>https://codepen.io/kim7720/pen/LYQNbRd</a>
+   
+ ## 배운점
+ 1. css에서도 :root 가상선택자를 이용해서지역변수나 전역변수 개념을 활용할 수 있다는 걸 배웠다.
+```css
+:root {
+    --success-color:#2ecc71;
+    --error-color:#e74c3c;
+}
+
+```  
+  
+```css
+.form-control.success input{
+    border-color: var(--success-color);
+}
+
+.form-control.error input{
+    border-color: var(--error-color);
+}
+```
+부트스트랩이나 bulma 같은 유명한 프레임워크들이 어떤 원리로 동작하는지 궁금했었는데  css는 무궁무진한거 같다.
