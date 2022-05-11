@@ -4,7 +4,7 @@
    target='_blank'>https://codepen.io/kim7720/pen/LYQNbRd</a>
    
  ## 배운점
- 1. css에서도 :root 가상선택자를 이용해서지역변수나 전역변수 개념을 활용할 수 있다는 걸 배웠다.
+ 1. css에서도 :root 가상선택자를 이용해서지역변수나 전역변수 개념을 활용할 수 있다는 걸 학습 했습니다.
 ```css
 :root {
     --success-color:#2ecc71;
