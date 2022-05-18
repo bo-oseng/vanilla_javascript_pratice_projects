@@ -1,6 +1,6 @@
 # Movie seat booking
 + 영화예매 예제
-+ Live demo 
++ <a href='https://codepen.io/kim7720/pen/OJQNKwE'>Live demo </a>
 
 
 ### 배운점
