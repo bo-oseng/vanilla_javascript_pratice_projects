@@ -1,7 +1,7 @@
 # Custom Video Player
 
 - HTML video 속성을 활요한 커스텀 플레이어 예제
-- <a href = 'https://codepen.io/kim7720/pen/ExQWgRe'>https://codepen.io/kim7720/pen/ExQWgRe</a>
+- <a href = 'https://codepen.io/kim7720/pen/ExQWgRe'>Live demo</a>
 
 ## 배운점
 
