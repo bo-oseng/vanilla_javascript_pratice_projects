@@ -24,7 +24,30 @@ const getRandomUser = async () => {
 };
 ```
 
-2. reduce 메소드가 항상 헷갈렸는데, 이번 예제를 통해 적절히 활용하는 법을 학습 했습니다.
+2. Spread 를 활용해 축약적으로 특정 프로퍼티를 변경하는 법을 배웠습니다.
+   - Spread로 파이썬의 딕셔너리 컴프리헨션처럼  
+     `const changed = { ...{ x: 1, y: 2 }, y: 100 };` 와 같이 y프로퍼티를 변경하는 법을 학습했습니다.
+
+```javascript
+// 특정 프로퍼티 변경
+const changed = { ...{ x: 1, y: 2 }, y: 100 };
+// changed = { ...{ x: 1, y: 2 }, ...{ y: 100 } }
+console.log(changed); // { x: 1, y: 100 }
+```
+
+```javascript
+// Double eveveryones money
+const doubleMoney = () => {
+  console.log('1');
+  userData = userData.map((user) => {
+    return { ...user, money: user.money * 2 };
+  });
+
+  updateDOM();
+};
+```
+
+3. reduce 메소드가 헷갈렸는데, 이번 예제를 통해 적절히 활용하는 법을 학습 했습니다.
    - arr.reduce(callback[, initialValue]) 에서 initialValue로 reduce를 시작하기 전 초기값을 설정 할 수 있고, callback 함수의 인자로는 (state: U, element: T, index: number, array: T[]) state는 누적값, element는 처리할 현재값, index는 처리할 현재값의 인덱스, array는 reduce를 호출한 배열을 나타낸다.
 
 ```javascript
@@ -40,7 +63,7 @@ const calculateWealth = () => {
 };
 ```
 
-3. 데이터를 정제하고, 조작하는 부분과 웹페이지에 조작한 데이터를 업데이트 하는 부분을 나눠 더 가독성이 좋게 코드를 짜는법을 학습했다.
+4. 데이터를 정제하고, 조작하는 부분과 웹페이지에 조작한 데이터를 업데이트 하는 부분을 나눠 더 가독성이 좋게 코드를 짜는법을 학습했습니다.
 
 ```javascript
 // Update DOM 웹페에지에 업데이트를 담당하는 함수
