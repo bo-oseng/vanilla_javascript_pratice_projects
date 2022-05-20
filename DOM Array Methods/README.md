@@ -1,0 +1,75 @@
+# DOM Array Methods
+
+- Array 고차 함수를 활용한 간단한 재산 계산 어플리케이션
+- <a href='https://codepen.io/kim7720/pen/abqwwRN'>Live demo</a>
+
+## 배운점
+
+1. 비동기 함수를 다룰 때 유용한 async키워드와 await 키워드를 이론적으로는 알고 있었지만, 이번 예제를 통해 활용하는 법을 학습 했습니다.
+   - async와 await 키워드는 비동기 함수를 동기함수처럼 선언할 수 있게 해주는 일종의 syntatic sugar이다.
+
+```javascript
+// Fetch random user and add money
+const getRandomUser = async () => {
+  const res = await fetch('https://randomuser.me/api');
+  const data = await res.json();
+
+  const user = data.results[0];
+
+  const newUser = {
+    name: `${user.name.first} ${user.name.last}`,
+    money: Math.floor(Math.random() * 1000000),
+  };
+  addData(newUser);
+};
+```
+
+2. reduce 메소드가 항상 헷갈렸는데, 이번 예제를 통해 적절히 활용하는 법을 학습 했습니다.
+   - arr.reduce(callback[, initialValue]) 에서 initialValue로 reduce를 시작하기 전 초기값을 설정 할 수 있고, callback 함수의 인자로는 (state: U, element: T, index: number, array: T[]) state는 누적값, element는 처리할 현재값, index는 처리할 현재값의 인덱스, array는 reduce를 호출한 배열을 나타낸다.
+
+```javascript
+// Calculate Wealth
+const calculateWealth = () => {
+  const totalWealth = userData.reduce((acc, user) => (acc += user.money), 0);
+
+  const wealthEl = document.createElement('div');
+  wealthEl.innerHTML = `<h3>Total Wealth: <strong>${formatMoney(
+    totalWealth
+  )}</strong></h3>`;
+  main.appendChild(wealthEl);
+};
+```
+
+3. 데이터를 정제하고, 조작하는 부분과 웹페이지에 조작한 데이터를 업데이트 하는 부분을 나눠 더 가독성이 좋게 코드를 짜는법을 학습했다.
+
+```javascript
+// Update DOM 웹페에지에 업데이트를 담당하는 함수
+const updateDOM = (providedData = userData) => {
+  // Clear main div
+  main.innerHTML = '<h2><strong>Person</strong> Wealth</h2>';
+
+  providedData.forEach((item) => {
+    const element = document.createElement('div');
+    element.classList.add('person');
+    element.innerHTML = `<strong>${item.name}</strong>${formatMoney(
+      item.money
+    )}`;
+    main.appendChild(element);
+  });
+};
+```
+
+```javascript
+// Add new obj to data arr
+const addData = (obj) => {
+  userData.push(obj);
+  updateDOM();
+};
+
+// Sort by richest
+const sortByRichest = () => {
+  userData.sort((userA, userB) => userB.money - userA.money);
+
+  updateDOM();
+};
+```
