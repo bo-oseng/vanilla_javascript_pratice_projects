@@ -1,7 +1,7 @@
 # Menu Slider & Modal
 
 - vanila JS로 모달창과 메뉴슬라이더 만들기 예제
-- <a src='https://codepen.io/kim7720/pen/jOZwgZO'>Live demo</a>
+- <a href='https://codepen.io/kim7720/pen/jOZwgZO'> Live demo </a>
 
 ## 배운점
 
