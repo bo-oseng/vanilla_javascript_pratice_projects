@@ -3,7 +3,7 @@
 
 | Title|Link|
 |-|-|
-| User register with vaild judgemne|<a href='https://codepen.io/kim7720/pen/LYQNbRd'>Live demo</a> |
+| User register with vaild judgment|<a href='https://codepen.io/kim7720/pen/LYQNbRd'>Live demo</a> |
 |Movie seat booking|<a href='https://codepen.io/kim7720/pen/OJQNKwE'>Live demo </a>|
 |Custom Video Player|<a href = 'https://codepen.io/kim7720/pen/ExQWgRe'>Live demo</a>|
 |Exchange Rate Calculator|<a href = 'https://codepen.io/kim7720/pen/bGLWGxZ'>Live demo</a> |
