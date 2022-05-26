@@ -33,19 +33,27 @@ async function showPosts() {
   });
 }
 
-// Show loader & fetch more posts
-function showLoading() {
+// // Show loader & fetch more posts
+// function showLoading() {
+//   loading.classList.add('show');
+
+//   setTimeout(() => {
+//     loading.classList.remove('show');
+
+//     setTimeout(() => {
+//       page++;
+//       showPosts();
+//     }, 300);
+//   }, 1000);
+// }
+
+// Improve Show loader & fetch more posts
+const showLoading = async () => {
   loading.classList.add('show');
-
-  setTimeout(() => {
-    loading.classList.remove('show');
-
-    setTimeout(() => {
-      page++;
-      showPosts();
-    }, 300);
-  }, 1000);
-}
+  page++;
+  await showPosts();
+  loading.classList.remove('show');
+};
 
 // Filter posts by input
 function filterPosts(event) {
