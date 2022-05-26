@@ -75,6 +75,7 @@ function filterPosts(event) {
 // Show initial posts
 showPosts();
 
+// Listen scroll events
 window.addEventListener('scroll', () => {
   const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
   if (scrollTop + clientHeight >= scrollHeight - 5) {
