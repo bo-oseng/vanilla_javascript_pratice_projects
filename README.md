@@ -9,3 +9,4 @@
 |Exchange Rate Calculator|<a href = 'https://codepen.io/kim7720/pen/bGLWGxZ'>Live demo</a> |
 |DOM Array Methods |<a href='https://codepen.io/kim7720/pen/abqwwRN'>Live demo</a> |
 |Menu Slider & Modal |<a href='https://codepen.io/kim7720/pen/jOZwgZO'> Live demo </a> |
+|Infinite Scroll Posts |<a href='https://codepen.io/kim7720/pen/vYdpYjB'> Live demo </a> |
