@@ -17,24 +17,51 @@ const richestPeople = [
 // Store listitems
 const listItems = [];
 
-let dragStartIndex;
+let dragStartIndex = 0;
+
+// Check the order of
+function checkOredr() {
+  listItems.forEach((listItem, index) => {
+    const personName = listItem.querySelector('.draggable').innerText.trim();
+
+    if (personName !== richestPeople[index]) {
+      listItem.classList.add('wrong');
+    } else {
+      listItem.classList.remove('wrong');
+      listItem.classList.add('right');
+    }
+  });
+}
+
+// Swap list items thar are drag and drop
+function swapItems(fromIndex, toIndex) {
+  const itemOne = listItems[fromIndex].querySelector('.draggable');
+  const itemTwo = listItems[toIndex].querySelector('.draggable');
+
+  listItems[fromIndex].appendChild(itemTwo);
+  listItems[toIndex].appendChild(itemOne);
+}
 
 // Drag functions
-const dragStart = () => {
-  console.log(this);
+function dragStart() {
   dragStartIndex = +this.closest('li').getAttribute('data-index');
-  console.log(dragStartIndex);
-};
-const dragOver = () => {};
-const dragDrop = () => {};
-const dragEnter = () => {
+}
+function dragOver(e) {
+  e.preventDefault();
+}
+function dragDrop() {
+  let dragEndIndex = +this.getAttribute('data-index');
+  swapItems(dragStartIndex, dragEndIndex);
+}
+function dragEnter() {
   this.classList.add('over');
-};
-const dragLeave = () => {
+}
+function dragLeave() {
   this.classList.remove('over');
-};
+}
 
-const addEventListeners = () => {
+// Add eventListners
+function addEventListeners() {
   const draggables = document.querySelectorAll('.draggable');
   const dragListItems = document.querySelectorAll('.draggable-list li');
 
@@ -48,10 +75,10 @@ const addEventListeners = () => {
     item.addEventListener('dragenter', dragEnter);
     item.addEventListener('dragleave', dragLeave);
   });
-};
+}
 
 // Insert list items into Dom
-const createList = () => {
+function createList() {
   [...richestPeople]
     .map((a) => ({ value: a, sort: Math.random() }))
     .sort((a, b) => a.sort - b.sort)
@@ -75,6 +102,8 @@ const createList = () => {
     });
 
   addEventListeners();
-};
+}
 
 createList();
+
+check.addEventListener('click', checkOredr);
