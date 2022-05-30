@@ -60,7 +60,7 @@ body {
   color: #3ae374;
 }
 
-.draggable-list li.right .person-name {
+.draggable-list li.wrong .person-name {
   color: #ff3a3a;
 }
 

@@ -43,7 +43,7 @@ function swapItems(fromIndex, toIndex) {
 }
 
 // Drag functions
-function dragStart() {
+function dragStart(e) {
   dragStartIndex = +this.closest('li').getAttribute('data-index');
 }
 function dragOver(e) {
@@ -80,8 +80,8 @@ function addEventListeners() {
 // Insert list items into Dom
 function createList() {
   [...richestPeople]
-    .map((a) => ({ value: a, sort: Math.random() }))
-    .sort((a, b) => a.sort - b.sort)
+    .map((a) => ({ value: a, order: Math.random() }))
+    .sort((a, b) => a.order - b.order)
     .map((a) => a.value)
     .forEach((person, index) => {
       const listItem = document.createElement('li');
