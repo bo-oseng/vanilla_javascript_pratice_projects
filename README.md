@@ -12,3 +12,4 @@
 | Menu Slider & Modal               | <a href='https://codepen.io/kim7720/pen/jOZwgZO'> Live demo </a> |
 | Infinite Scroll Posts             | <a href='https://codepen.io/kim7720/pen/vYdpYjB'> Live demo </a> |
 | Sortable list(Drag and Drop)      | <a href='https://codepen.io/kim7720/pen/QWQmNWr'> Live demo </a> |
+| Hangman(svg, regexp, keydown)     | <a href='https://codepen.io/kim7720/pen/QWQmzJq'> Live demo </a> |
