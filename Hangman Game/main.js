@@ -73,14 +73,16 @@ const showNotification = () => {
 
 // isAlpha
 const isAlpha = (strs) => {
-  if (strs.length > 1) {
-    return false;
-  }
   return /[a-zA-Z]/.test(strs);
 };
 
 // Keydown letter press
 window.addEventListener('keydown', (e) => {
+  // Filter special key(Ctrl, Alt, Shift)
+  if (e.key.length > 1) {
+    return false;
+  }
+
   if (isAlpha(e.key)) {
     const letter = e.key;
 
