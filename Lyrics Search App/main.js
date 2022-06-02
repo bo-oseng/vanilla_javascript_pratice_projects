@@ -31,7 +31,7 @@ const showData = (data) => {
         (song) => `
     <li>
       <span><strong>${song.artist.name}</strong> - ${song.title}</span>
-      <button class="btn" data-artist='${song.title}'>Get Lyrics</button>
+      <button class="btn" data-artist='${song.artist.name}' data-songtitle='${song.title}'>Get Lyrics</button>
     </li>
     `
       )
@@ -59,8 +59,7 @@ const showData = (data) => {
 
 // getMoreSongs
 const getMoreSongs = async (url) => {
-  console.log(url);
-  const res = await fetch('https://cors-anywhere.herokuapp.com/' + `${url}`);
+  const res = await fetch(`https://cors-anywhere.herokuapp.com/${url}`);
   const data = await res.json();
 
   showData(data);
@@ -84,5 +83,29 @@ form.addEventListener('submit', (e) => {
     alert('Please type in a search term');
   } else {
     searchSongs(searchTerm);
+  }
+});
+
+// Get lyrics for song {
+const getLyrics = async (artist, songTitle) => {
+  const res = await fetch(`${APIURL}/v1/${artist}/${songTitle}`);
+  const data = await res.json();
+
+  const lyrics = data.lyrics.replace(/(\r\n|\r|\n)/g, '<bt>');
+
+  console.log(lyrics);
+  results.innerHTML = `<h2><strong>${artist}</strong> - ${songTitle}</h2>
+  `;
+};
+
+// Get lyrics button click
+result.addEventListener('click', (e) => {
+  const clickedEl = e.target;
+
+  if (clickedEl.tagName === 'BUTTON') {
+    const artist = clickedEl.getAttribute('data-artist');
+    const songTitle = clickedEl.getAttribute('data-songtitle');
+
+    getLyrics(artist, songTitle);
   }
 });
