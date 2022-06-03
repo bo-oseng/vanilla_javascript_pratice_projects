@@ -91,10 +91,14 @@ const getLyrics = async (artist, songTitle) => {
   const res = await fetch(`${APIURL}/v1/${artist}/${songTitle}`);
   const data = await res.json();
 
-  const lyrics = data.lyrics.replace(/(\r\n|\r|\n)/g, '<bt>');
+  const lyrics = data.lyrics.replace(/(\r\n|\r|\n)/g, '<br>');
 
   console.log(lyrics);
-  results.innerHTML = `<h2><strong>${artist}</strong> - ${songTitle}</h2>
+  result.innerHTML = `
+  <h2>
+    <strong>${artist}</strong> - ${songTitle}
+  </h2>
+  <span>${lyrics}</span>
   `;
 };
 
