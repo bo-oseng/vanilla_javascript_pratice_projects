@@ -13,3 +13,4 @@
 | Infinite Scroll Posts             | <a href='https://codepen.io/kim7720/pen/vYdpYjB'> Live demo </a> |
 | Sortable list(Drag and Drop)      | <a href='https://codepen.io/kim7720/pen/QWQmNWr'> Live demo </a> |
 | Hangman(svg, regexp, keydown)     | <a href='https://codepen.io/kim7720/pen/QWQmzJq'> Live demo </a> |
+| LyricsSearch(SOP, CORS)     | <a href='https://codepen.io/kim7720/pen/XWZBMwz'> Live demo </a> |
