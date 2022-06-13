@@ -59,8 +59,11 @@ const showData = (data) => {
 
 // getMoreSongs
 const getMoreSongs = async (url) => {
-  const res = await fetch(`https://cors-anywhere.herokuapp.com/${url}`);
+  // const res = await fetch(`https://cors-anywhere.herokuapp.com/${url}`);
+  //  기존에 썼던 데모버전 proxy에서 내가 관리하는 프록시로 개선
+  const res = await fetch(`https://bo-oseng-cors-proxy.herokuapp.com/${url}`);
   const data = await res.json();
+  console.log(data)
 
   showData(data);
 };
@@ -69,7 +72,6 @@ const getMoreSongs = async (url) => {
 const searchSongs = async (term) => {
   const res = await fetch(`${APIURL}/suggest/${term}`);
   const data = await res.json();
-
   showData(data);
 };
 
@@ -89,9 +91,11 @@ form.addEventListener('submit', (e) => {
 // Get lyrics for song {
 const getLyrics = async (artist, songTitle) => {
   const res = await fetch(`${APIURL}/v1/${artist}/${songTitle}`);
+  console.log(res)
   const data = await res.json();
+  console.log(data)
 
-  const lyrics = data.lyrics.replace(/(\r\n|\r|\n)/g, '<br>');
+  const lyrics = data?.lyrics.replace(/(\r\n|\r|\n)/g, '<br>');
 
   console.log(lyrics);
   result.innerHTML = `
